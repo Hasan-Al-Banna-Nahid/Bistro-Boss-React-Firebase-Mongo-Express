@@ -7,24 +7,24 @@ const Banner = () => {
   return (
     <div>
       <div>
-        <Carousel className="absolute">
+        <Carousel>
           <div>
-            <img src="../assets/home/01.jpg" className="max-w-7xl" />
+            <img src="assets/home/01.jpg" className="max-w-7xl" />
           </div>
           <div>
-            <img src="../assets/home/02.jpg" />
+            <img src="assets/home/02.jpg" className="max-w-7xl" />
           </div>
           <div>
-            <img src="../assets/home/03.png" />
+            <img src="assets/home/03.png" className="max-w-7xl" />
           </div>
           <div>
-            <img src="../assets/home/04.jpg" />
+            <img src="assets/home/04.jpg" className="max-w-7xl" />
           </div>
           <div>
-            <img src="../assets/home/05.png" />
+            <img src="assets/home/05.png" className="max-w-7xl" />
           </div>
           <div>
-            <img src="../assets/home/06.png" />
+            <img src="assets/home/06.png" className="max-w-7xl" />
           </div>
         </Carousel>
       </div>
