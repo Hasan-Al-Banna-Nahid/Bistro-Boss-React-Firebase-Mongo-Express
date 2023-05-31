@@ -5,6 +5,10 @@ import Banner from "../../Banner/Banner";
 import Featured from "../../Featured/Featured";
 import PopularMenu from "../../PopularMenu/PopularMenu";
 import CallUs from "../../Call Us/CallUs";
+import ChefRecommendation from "../../Chef Recommendation/ChefRecommendation";
+import AdditionalBanner from "../../AdditionalBanner/AdditionalBanner";
+import Testimonials from "../../Testimonials/Testimonials";
+import Footer from "../../Footer/Footer";
 
 const Home = () => {
   return (
@@ -14,6 +18,10 @@ const Home = () => {
       <Featured />
       <PopularMenu />
       <CallUs />
+      <ChefRecommendation />
+      <AdditionalBanner />
+      <Testimonials />
+      <Footer />
     </div>
   );
 };

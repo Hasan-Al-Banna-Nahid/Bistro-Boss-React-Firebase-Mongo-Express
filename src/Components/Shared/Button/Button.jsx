@@ -5,7 +5,7 @@ import React from "react";
 const Button = ({ name }) => {
   return (
     <div>
-      <button className="btn btn-ghost  border-b-[#222f3e] text-center mx-auto w-80 ms-96">
+      <button className="btn btn-ghost  border-b-[#222f3e] text-center mx-auto w-32 ms-[550px] ">
         {name}
       </button>
     </div>
