@@ -2,6 +2,7 @@
 import React from "react";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 import "./AdditionalBanner.css";
+import Tilt from "react-parallax-tilt";
 
 const AdditionalBanner = () => {
   return (
@@ -10,10 +11,13 @@ const AdditionalBanner = () => {
       <div className="featured h-[560px] rounded-lg">
         <div className="hero min-h-screen bg-transparent flex justify-center">
           <div className="hero-content text-center text-[#ff9f43] flex-col lg:flex-row">
-            <img
-              src="../../../public/assets/home/featured.jpg"
-              className="max-w-sm rounded-lg shadow-2xl"
-            />
+            <Tilt scale={2}>
+              <img
+                src="../../../public/assets/home/featured.jpg"
+                className="max-w-sm rounded-lg shadow-2xl"
+              />
+            </Tilt>
+
             <div>
               <p className="py-6">
                 Provident cupiditate voluptatem et in. Quaerat fugiat ut <br />

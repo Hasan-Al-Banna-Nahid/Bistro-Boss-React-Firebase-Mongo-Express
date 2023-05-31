@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -54,7 +55,10 @@ const Navbar = () => {
         <div className="navbar-center sm:hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a href="">Home</a>
+              <Link to="/">
+                {" "}
+                <a href="">Home</a>
+              </Link>
             </li>
             <li>
               <a>Contact Us</a>
@@ -63,7 +67,9 @@ const Navbar = () => {
               <a>Dashboard</a>
             </li>
             <li>
-              <a>Our Menu</a>
+              <Link to="ourMenu">
+                <a>Our Menu</a>
+              </Link>
             </li>
             <li>
               <a>Our Shop</a>

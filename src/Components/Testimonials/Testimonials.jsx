@@ -26,12 +26,12 @@ const Testimonials = () => {
             return (
               <SwiperSlide key={review._id} className="mx-auto text-center">
                 <div>
-                  <div className="mx-auto w-96">
+                  <div className="mx-auto w-72">
                     <Rating value={review.rating} readOnly />
                   </div>
                   <div></div>
                   <div>
-                    <p className="font-bold">{review.details}</p>
+                    <p className="font-bold text-center">{review.details}</p>
                   </div>
                   <div>
                     <h3 className="font-bold text-3xl text-orange-500">
