@@ -4,6 +4,7 @@ import Navbar from "../../Navbar/Navbar";
 import Banner from "../../Banner/Banner";
 import Featured from "../../Featured/Featured";
 import PopularMenu from "../../PopularMenu/PopularMenu";
+import CallUs from "../../Call Us/CallUs";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <Banner />
       <Featured />
       <PopularMenu />
+      <CallUs />
     </div>
   );
 };

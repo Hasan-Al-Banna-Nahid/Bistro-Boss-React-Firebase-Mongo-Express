@@ -6,7 +6,7 @@ const ShowMenus = ({ img, name, info, price }) => {
   return (
     <div className="mx-auto">
       <div>
-        <div className="flex p-6 items-center font-semibold">
+        <div className="flex p-6 items-center font-medium">
           <div className="px-2">
             <img src={img} alt="" className="rounded-s-3xl w-28" />
           </div>

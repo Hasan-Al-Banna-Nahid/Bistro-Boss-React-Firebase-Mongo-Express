@@ -4,6 +4,7 @@ import React from "react";
 import useMenus from "../Shared/Hooks/useMenus";
 import ShowMenus from "../Shared/showMenus/showMenus";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
+import Button from "../Shared/Button/Button";
 
 const PopularMenu = () => {
   const [menus] = useMenus();
@@ -24,6 +25,7 @@ const PopularMenu = () => {
               />
             );
           })}
+          <Button name={"View All Dish"} />
         </div>
       </div>
     </div>
