@@ -4,8 +4,8 @@ import React from "react";
 
 const Button = ({ name }) => {
   return (
-    <div>
-      <button className="btn btn-ghost  border-b-[#222f3e] text-center mx-auto w-56 ms-[550px] ">
+    <div className="my-8">
+      <button className="btn btn-ghost  border-b-[#222f3e] text-center mx-auto w-64 ms-[500px] ">
         {name}
       </button>
     </div>
