@@ -3,6 +3,7 @@ import React from "react";
 import Navbar from "../../Navbar/Navbar";
 import Banner from "../../Banner/Banner";
 import Featured from "../../Featured/Featured";
+import PopularMenu from "../../PopularMenu/PopularMenu";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <Navbar />
       <Banner />
       <Featured />
+      <PopularMenu />
     </div>
   );
 };

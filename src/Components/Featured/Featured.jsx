@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
+import Banner from "../Shared/Banner/Banner";
 
 const Featured = () => {
   return (
@@ -35,16 +36,16 @@ const Featured = () => {
           <SwiperSlide>
             <img src="assets/home/slide5.jpg" className="rounded-2xl" alt="" />
           </SwiperSlide>
-          <div className="flex gap-6 mt-4">
-            <div>
-              <FaArrowLeft />
-            </div>
-            <div>
-              <FaArrowRight />
-            </div>
-          </div>
+          <div className="text-7xl">....</div>
         </Swiper>
       </div>
+      <Banner
+        img={"assets/home/chef-service.jpg"}
+        title={"Bistro Boss"}
+        info={
+          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, libero accusamus laborum deserunt ratione dolor officiis praesentium! Deserunt magni aperiam dolor eius dolore at, nihil iusto ducimus incidunt quibusdam nemo."
+        }
+      />
     </div>
   );
 };
