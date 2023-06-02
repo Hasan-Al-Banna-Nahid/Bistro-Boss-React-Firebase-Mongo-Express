@@ -2,8 +2,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Authentication/Provider/provider";
+import { useSelector } from "react-redux";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
+  const count = useSelector((state) => state.count);
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut();
@@ -76,8 +79,11 @@ const Navbar = () => {
                 <a>Our Menu</a>
               </Link>
             </li>
-
-            <li>{user && user.displayName}</li>
+            <li>
+              <div className="badge badge-info text-2xl p-4">
+                <FaShoppingCart />+{count}
+              </div>
+            </li>
           </ul>
         </div>
         <div className="navbar-end">

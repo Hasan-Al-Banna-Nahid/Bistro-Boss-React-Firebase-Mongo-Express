@@ -1,7 +1,6 @@
-import { Axios } from "axios";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-const axios = import("axios");
+
 // Initial State
 // eslint-disable-next-line no-unused-vars
 const initialState = {

@@ -1,9 +1,15 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { useDispatch } from "react-redux";
+import { incrementCartValue } from "../../Redux/ActionCreator/ActionCreator";
 
 const ShowCard = ({ item }) => {
   const { image, name, recipe, btn } = item;
+  const dispacth = useDispatch();
+  const handleCart = () => {
+    dispacth(incrementCartValue());
+  };
   return (
     <div>
       <div>
@@ -15,7 +21,10 @@ const ShowCard = ({ item }) => {
             <h2 className="card-title text-red-500">Dish : {name}</h2>
             <p>{recipe}</p>
             <div className="card-actions">
-              <button className="btn btn-outline btn-ghost border-b-2 border-b-[#222f3e]">
+              <button
+                onClick={handleCart}
+                className="btn btn-outline btn-ghost border-b-2 border-b-[#222f3e]"
+              >
                 {"Add To Cart"}
               </button>
             </div>
