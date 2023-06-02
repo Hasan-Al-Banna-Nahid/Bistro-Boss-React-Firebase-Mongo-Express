@@ -1,8 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Authentication/Provider/provider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut();
+  };
   return (
     <div>
       <div className="navbar bg-base-100 fixed z-10 bg-transparent text-white font-bold text-xl">
@@ -26,7 +31,7 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu lg:hidden menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li tabIndex={0}>
                 <li>
@@ -47,13 +52,13 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">
+          <a className="btn btn-ghost normal-case text-2xl text-[#fbc531]">
             Bistro Boss <br />
             Restaurant
           </a>
         </div>
         <div className="navbar-center sm:hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 text-[#8c7ae6]">
             <li>
               <Link to="/">
                 {" "}
@@ -67,17 +72,30 @@ const Navbar = () => {
               <a>Dashboard</a>
             </li>
             <li>
-              <Link to="ourMenu">
+              <Link to="/ourMenu">
                 <a>Our Menu</a>
               </Link>
             </li>
             <li>
-              <a>Our Shop</a>
+              <Link to="/order">
+                <a>Order Food</a>
+              </Link>
             </li>
+            <li>{user && user.displayName}</li>
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Get started</a>
+          {user ? (
+            <button onClick={handleLogOut}>
+              <a className="btn">LogOut</a>
+            </button>
+          ) : (
+            <div>
+              <Link to="/login">
+                <a className="btn">Login</a>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

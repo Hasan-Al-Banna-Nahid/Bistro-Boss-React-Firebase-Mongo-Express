@@ -2,9 +2,9 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import useMenus from "../Shared/Hooks/useMenus";
-import ShowMenus from "../Shared/showMenus/showMenus";
 import SectionTitle from "../Shared/SectionTitle/SectionTitle";
-import Button from "../Shared/Button/Button";
+import BannerImage from "../../../public/assets/home/chef-service.jpg";
+import Items from "../Shared/Items/Items";
 
 const PopularMenu = () => {
   const [menus] = useMenus();
@@ -13,19 +13,16 @@ const PopularMenu = () => {
     <div>
       <SectionTitle subTitle={"Check it Out"} Title={"From Our Popular Menu"} />
       <div>
-        <div className="grid md:grid-cols-2 mx-auto gap-8">
-          {popular.map((popular) => {
-            return (
-              <ShowMenus
-                key={popular._id}
-                img={popular.image}
-                name={popular.name}
-                info={popular.recipe}
-                price={popular.price}
-              />
-            );
-          })}
-          <Button name={"View All Dish"} />
+        <div>
+          <Items
+            img={BannerImage}
+            title={"Popular Menu"}
+            info={
+              "Pan roasted pork belly with gratin potato, braised Savoy cabbage, apples, thyme and calvados jus"
+            }
+            btn={"View Full Menu"}
+            items={popular}
+          />
         </div>
       </div>
     </div>

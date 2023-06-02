@@ -1,4 +1,5 @@
 .featured {
   background: url("assets/home/featured.jpg");
   background-size: cover;
+  background-position: fixed;
 }
