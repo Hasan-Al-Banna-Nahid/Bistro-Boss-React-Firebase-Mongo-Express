@@ -4,12 +4,17 @@ import "./Login.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/provider";
 import Swal from "sweetalert2";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
   const location = useLocation();
-  const navigate = useNavigate();
-  const { accessLogin, user } = useContext(AuthContext);
   let from = location.state?.from?.pathname || "/";
+  const navigate = useNavigate();
+  const { accessLogin, googleLogin } = useContext(AuthContext);
+  const handleGoogleLogin = () => {
+    googleLogin();
+    navigate(from, { replace: true });
+  };
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -72,6 +77,10 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
+              <div className="divider">OR</div>
+              <button onClick={handleGoogleLogin}>
+                <FaGoogle className="text-6xl text-center mx-auto hover:text-[#F4B400]" />
+              </button>
               <div className="form-control mt-6">
                 <Link to="/signUp">
                   {" "}

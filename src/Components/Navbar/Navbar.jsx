@@ -76,11 +76,7 @@ const Navbar = () => {
                 <a>Our Menu</a>
               </Link>
             </li>
-            <li>
-              <Link to="/order">
-                <a>Order Food</a>
-              </Link>
-            </li>
+
             <li>{user && user.displayName}</li>
           </ul>
         </div>

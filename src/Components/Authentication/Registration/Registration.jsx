@@ -1,16 +1,21 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Form, useForm } from "react-hook-form";
 import { AuthContext } from "../Provider/provider";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { FaGoogle } from "react-icons/fa";
 
 const MySwal = withReactContent(Swal);
 
 const Registration = () => {
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   const navigate = useNavigate();
-  const { registerWIthEmailAndPassword, updateUser } = useContext(AuthContext);
+  const { registerWIthEmailAndPassword, updateUser, googleLogin } =
+    useContext(AuthContext);
+
   const {
     register,
     handleSubmit,
@@ -18,7 +23,13 @@ const Registration = () => {
     reset,
     formState: { errors },
   } = useForm();
+
   const [errorMessage, setErrorMessage] = useState("");
+
+  const handleGoogleLogin = () => {
+    googleLogin();
+    navigate(from, { replace: true });
+  };
   const onSubmit = (data, e) => {
     const form = e.target;
     const password = form.password.value;
@@ -27,7 +38,7 @@ const Registration = () => {
       setErrorMessage("Password Did Not Match");
       return;
     }
-    console.log(data);
+
     registerWIthEmailAndPassword(data.email, data.password).then((result) => {
       console.log(result.user);
       updateUser(data.name, data.photo);
@@ -35,6 +46,7 @@ const Registration = () => {
       navigate("/login");
     });
   };
+
   return (
     <div>
       <div className="auth">
@@ -140,6 +152,10 @@ const Registration = () => {
                 <div className="form-control mt-6">
                   <button className="btn btn-primary">Sign Up</button>
                 </div>
+                <div className="divider">OR</div>
+                <button onClick={handleGoogleLogin}>
+                  <FaGoogle className="text-6xl text-center mx-auto hover:text-[#F4B400]" />
+                </button>
                 <div className="form-control mt-6">
                   <Link to="/login">
                     {" "}

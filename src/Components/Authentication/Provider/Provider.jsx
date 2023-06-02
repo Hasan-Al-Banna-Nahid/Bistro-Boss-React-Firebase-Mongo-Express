@@ -1,11 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { Children, createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import {
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -13,10 +15,15 @@ import app from "../Firebase/Firebase.config";
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
+const GoogleProvider = new GoogleAuthProvider();
 
 const Provider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+
+  const googleLogin = () => {
+    return signInWithPopup(auth, GoogleProvider);
+  };
 
   const registerWIthEmailAndPassword = (email, password) => {
     setIsLoading(true);
@@ -51,6 +58,7 @@ const Provider = ({ children }) => {
     registerWIthEmailAndPassword,
     updateUser,
     accessLogin,
+    googleLogin,
     logOut,
   };
   return (
