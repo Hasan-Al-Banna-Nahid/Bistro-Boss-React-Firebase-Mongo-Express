@@ -6,6 +6,7 @@ import { AuthContext } from "../Provider/provider";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { FaGoogle } from "react-icons/fa";
+const axios = import("axios");
 
 const MySwal = withReactContent(Swal);
 
@@ -27,7 +28,18 @@ const Registration = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleGoogleLogin = () => {
-    googleLogin();
+    googleLogin().then((result) => {
+      fetch("http://localhost:5000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: result.user.displayName,
+          email: result.user.email,
+        }),
+      });
+    });
     navigate(from, { replace: true });
   };
   const onSubmit = (data, e) => {
@@ -44,6 +56,13 @@ const Registration = () => {
       updateUser(data.name, data.photo);
       MySwal.fire("Good job!", "You Account Is Created!", "success");
       navigate("/login");
+      fetch("http://localhost:5000/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: data.name, email: data.email }),
+      });
     });
   };
 

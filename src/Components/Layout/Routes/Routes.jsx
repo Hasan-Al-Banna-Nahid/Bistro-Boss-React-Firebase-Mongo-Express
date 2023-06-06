@@ -7,6 +7,9 @@ import OurMenu from "../../OurMenu/OurMenu";
 import OrderFood from "../../OurFood/OurFood";
 import Login from "../../Authentication/Login/Login";
 import Registration from "../../Authentication/Registration/Registration";
+import Dashboard from "../../Dashboard/Dashboard";
+import MyCart from "../../Dashboard/MyCart/MyCart";
+import AllUsers from "../../Dashboard/AllUsers/AllUsers";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +35,20 @@ const router = createBrowserRouter([
       {
         path: "/signUp",
         element: <Registration />,
+      },
+    ],
+  },
+  {
+    path: "dashboard",
+    element: <Dashboard />,
+    children: [
+      {
+        path: "cart",
+        element: <MyCart />,
+      },
+      {
+        path: "users",
+        element: <AllUsers />,
       },
     ],
   },

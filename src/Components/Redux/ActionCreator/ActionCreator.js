@@ -1,7 +1,7 @@
-import { INCREMENT } from "../Constant/Constant";
+// import { INCREMENT } from "../Constant/Constant";
 
-export const incrementCartValue = () => {
-  return {
-    type: INCREMENT,
-  };
-};
+// export const incrementCartValue = () => {
+//   return {
+//     type: INCREMENT,
+//   };
+// };

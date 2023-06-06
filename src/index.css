@@ -6,3 +6,10 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+.menu a .active {
+  color: black;
+}
+.menu a {
+  background-color: transparent;
+  color: teal;
+}

@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
-  const count = useSelector((state) => state.count);
+  const Counter = useSelector((state) => state.Counter.count);
   const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut();
@@ -38,7 +38,7 @@ const Navbar = () => {
             >
               <li tabIndex={0}>
                 <li>
-                  <a href="">Home</a>
+                  <a>Home</a>
                 </li>
                 <li>
                   <a>Contact Us</a>
@@ -81,7 +81,10 @@ const Navbar = () => {
             </li>
             <li>
               <div className="badge badge-info text-2xl p-4">
-                <FaShoppingCart />+{count}
+                <Link to="/dashboard">
+                  <FaShoppingCart className="text-red-600" />
+                </Link>
+                <span className="text-[#2f3640]">+{Counter}</span>
               </div>
             </li>
           </ul>

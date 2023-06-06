@@ -4,6 +4,7 @@ import React from "react";
 import ShowCard from "../ShowCard/ShowCard";
 
 const OrderTab = ({ items }) => {
+  // console.log("hello", items);
   return (
     <div>
       <div className="grid md:grid-cols-3">
